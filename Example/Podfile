@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MXRouter_Example' do
+  pod 'MXRouter', :path => '../'
+
+  target 'MXRouter_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
