@@ -55,7 +55,6 @@ static MXPageManger *manager = nil;
              callBack:(MXCallBack)callBack {
     MXURLModel *model = [MXURLModel resolver:url];
     [model.parameters addEntriesFromDictionary:parameter];
-    model.callBack = callBack;
     [self jumpWithModel:model callBack:callBack];
 }
 - (void)jumpWithModel:(MXURLModel *)model
@@ -67,12 +66,12 @@ static MXPageManger *manager = nil;
         case JumpType_Push:
             [self pushModel:model
                   animation:YES
-                   response:model.callBack];
+                   response:callBack];
             break;
         case JumpType_Present:
             [self presentWithModel:model
                          animation:YES
-                          response:model.callBack];
+                          response:callBack];
             break;
         case JumpType_Pop:
             [self popToAnotherName:model

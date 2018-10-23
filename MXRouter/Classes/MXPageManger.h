@@ -31,18 +31,22 @@
  * url 路由地址
  * callBack 页面回调
  */
-- (void)routerWithUrl:(NSString *)url callBack:(MXCallBack)callBack;
+- (void)routerWithUrl:(NSString *)url
+             callBack:(MXCallBack)callBack;
 
 /** 发起路由跳转
  * url 路由地址
  * parameter 需要传递给目标页面对象的参数
  */
-- (void)routerWithUrl:(NSString *)url parameter:(NSDictionary *)parameter;
+- (void)routerWithUrl:(NSString *)url
+            parameter:(NSDictionary *)parameter;
 
 /** 发起路由跳转
  * url 路由地址
  * parameter 需要传递给目标页面对象的参数
  * callBack 页面回调
  */
-- (void)routerWithUrl:(NSString *)url parameter:(NSDictionary *)parameter callBack:(MXCallBack)callBack;
+- (void)routerWithUrl:(NSString *)url
+            parameter:(NSDictionary *)parameter
+             callBack:(MXCallBack)callBack;
 @end

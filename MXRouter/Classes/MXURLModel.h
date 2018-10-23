@@ -42,6 +42,5 @@ typedef NS_ENUM(NSUInteger, URLRouteType) {
 @property (nonatomic, copy) NSString *anotherName;
 //路由类型
 @property (nonatomic, assign) URLRouteType routeType;
-@property (nonatomic, copy) MXCallBack callBack;
 + (MXURLModel *)resolver:(NSString *)url;
 @end
