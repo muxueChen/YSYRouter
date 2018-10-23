@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MXCommonProtocols.h>
+#import "MXCommonProtocols.h"
 
 /** UIViewController路由扩展类 */
 @interface UIViewController (MXRouter) <MXViewControlleProtocol>

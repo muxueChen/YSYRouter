@@ -7,7 +7,8 @@
 //
 
 #import "MXViewController.h"
-
+#import <MXRouter/MXRoute.h>
+#import <MXRouter/MXPageManger.h>
 @interface MXViewController ()
 
 @end
