@@ -10,6 +10,11 @@
 #endif
 #endif
 
+#import "MXCommonProtocols.h"
+#import "MXPageManger.h"
+#import "MXRoute.h"
+#import "MXURLModel.h"
+#import "UIViewController+MXRouter.h"
 
 FOUNDATION_EXPORT double MXRouterVersionNumber;
 FOUNDATION_EXPORT const unsigned char MXRouterVersionString[];

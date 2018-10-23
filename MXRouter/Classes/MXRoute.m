@@ -12,13 +12,15 @@
 @implementation MXRoute
 
 static const NSString *MXRouteTableSource = @"RouteTable.json";
-static MXRoute *route = nil;
+static MXRoute *router = nil;
 + (instancetype)share {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        route = [[MXRoute alloc] init];
+        if (!router) {
+            router = [[MXRoute alloc] init];
+        }
     });
-    return route;
+    return router;
 }
 - (instancetype)init {
     self = [super init];
