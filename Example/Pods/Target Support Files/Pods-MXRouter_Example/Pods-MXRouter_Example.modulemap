@@ -1,0 +1,6 @@
+framework module Pods_MXRouter_Example {
+  umbrella header "Pods-MXRouter_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
