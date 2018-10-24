@@ -21,7 +21,10 @@ pod 'MXRouter'
 ```
 ## 路由类图
 
-![类图说明.png](https://upload-images.jianshu.io/upload_images/4639197-987d2ddc6ea067c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![轻量级路由类图.jpg](https://upload-images.jianshu.io/upload_images/4639197-7953d300b51205bc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 使用说明
+
 
 ## Author
 
