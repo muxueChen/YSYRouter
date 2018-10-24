@@ -1,5 +1,40 @@
 {
     "webview":{
-        
+        "router://www.webview.com/webview":{
+            "iclass":"MXWebViewController",
+            "aclass":"",
+            "description":"网页,这个固定写法，根据自己的类不同可以更改iclass"
+        }
+    },
+    "order":{
+        "router://www.muxue.com/order/orderlist":{
+            "iclass":"MXOrderlistViewController",
+            "aclass":"",
+            "description":"订单列表"
+        },
+        "router://www.muxue.com/order/detail":{
+            "iclass":"MXOrderDetailViewController",
+            "aclass":"",
+            "description":"订单详情"
+        },
+        "router://www.muxue.com/order/aftersale":{
+            "iclass":"MXOrderAftersaleViewController",
+            "aclass":"",
+            "description":"订单售后"
+        }
+    },
+    "home":{
+        "router://www.muxue.com/home":{
+            "iclass":"MXHomeViewController",
+            "aclass":"",
+            "description":"首页"
+        }
+    },
+    "SDK":{
+        "router://www.muxue.com/SDK/pay":{
+            "iclass":"MXPayService",
+            "aclass":"",
+            "description":"真对于第三方SDK没有暴露页面控制的情况下使用这一种"
+        }
     }
 }

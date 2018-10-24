@@ -24,6 +24,13 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		98CC3BA82180C726003DAAD4 /* MXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC3BA72180C726003DAAD4 /* MXWebViewController.m */; };
+		98CC3BAB2180C799003DAAD4 /* MXOrderlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC3BAA2180C799003DAAD4 /* MXOrderlistViewController.m */; };
+		98CC3BAE2180C7AD003DAAD4 /* MXOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC3BAD2180C7AD003DAAD4 /* MXOrderDetailViewController.m */; };
+		98CC3BB12180C7C6003DAAD4 /* MXOrderAftersaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC3BB02180C7C6003DAAD4 /* MXOrderAftersaleViewController.m */; };
+		98CC3BB52180C922003DAAD4 /* MXPayService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC3BB42180C922003DAAD4 /* MXPayService.m */; };
+		98CC3BB82180C93E003DAAD4 /* MXPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC3BB72180C93E003DAAD4 /* MXPayViewController.m */; };
+		98CC3BBB2180CA71003DAAD4 /* MXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CC3BBA2180CA71003DAAD4 /* MXHomeViewController.m */; };
 		98DD982F217F734E006B4531 /* RouteTable.json in Resources */ = {isa = PBXBuildFile; fileRef = 98DD982E217F734E006B4531 /* RouteTable.json */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +71,20 @@
 		7A2DC808F9D6BE69EA50CB9C /* Pods-MXRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MXRouter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MXRouter_Example/Pods-MXRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C1D23617017D684BDDF3D67 /* Pods-MXRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MXRouter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MXRouter_Example/Pods-MXRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		98CC3BA62180C726003DAAD4 /* MXWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWebViewController.h; sourceTree = "<group>"; };
+		98CC3BA72180C726003DAAD4 /* MXWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWebViewController.m; sourceTree = "<group>"; };
+		98CC3BA92180C799003DAAD4 /* MXOrderlistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXOrderlistViewController.h; sourceTree = "<group>"; };
+		98CC3BAA2180C799003DAAD4 /* MXOrderlistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXOrderlistViewController.m; sourceTree = "<group>"; };
+		98CC3BAC2180C7AD003DAAD4 /* MXOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXOrderDetailViewController.h; sourceTree = "<group>"; };
+		98CC3BAD2180C7AD003DAAD4 /* MXOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXOrderDetailViewController.m; sourceTree = "<group>"; };
+		98CC3BAF2180C7C6003DAAD4 /* MXOrderAftersaleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXOrderAftersaleViewController.h; sourceTree = "<group>"; };
+		98CC3BB02180C7C6003DAAD4 /* MXOrderAftersaleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXOrderAftersaleViewController.m; sourceTree = "<group>"; };
+		98CC3BB32180C922003DAAD4 /* MXPayService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXPayService.h; sourceTree = "<group>"; };
+		98CC3BB42180C922003DAAD4 /* MXPayService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPayService.m; sourceTree = "<group>"; };
+		98CC3BB62180C93E003DAAD4 /* MXPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXPayViewController.h; sourceTree = "<group>"; };
+		98CC3BB72180C93E003DAAD4 /* MXPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPayViewController.m; sourceTree = "<group>"; };
+		98CC3BB92180CA71003DAAD4 /* MXHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXHomeViewController.h; sourceTree = "<group>"; };
+		98CC3BBA2180CA71003DAAD4 /* MXHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXHomeViewController.m; sourceTree = "<group>"; };
 		98DD982E217F734E006B4531 /* RouteTable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RouteTable.json; sourceTree = "<group>"; };
 		A277DE4BAB28DDE0A2965899 /* Pods-MXRouter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MXRouter_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MXRouter_Tests/Pods-MXRouter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB82C7791FD46FAA55FABE1E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -137,12 +158,17 @@
 				6003F59C195388D20070C39A /* MXAppDelegate.h */,
 				6003F59D195388D20070C39A /* MXAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				98CC3BB22180C906003DAAD4 /* pay */,
+				98CC3BA32180C702003DAAD4 /* home */,
+				98CC3BA42180C702003DAAD4 /* order */,
 				6003F5A5195388D20070C39A /* MXViewController.h */,
+				98CC3BA62180C726003DAAD4 /* MXWebViewController.h */,
+				98CC3BA72180C726003DAAD4 /* MXWebViewController.m */,
+				98DD982E217F734E006B4531 /* RouteTable.json */,
 				6003F5A6195388D20070C39A /* MXViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
-				98DD982E217F734E006B4531 /* RouteTable.json */,
 			);
 			name = "Example for MXRouter";
 			path = MXRouter;
@@ -186,6 +212,39 @@
 				791FA9E798D8BEFE453E5590 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		98CC3BA32180C702003DAAD4 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				98CC3BB92180CA71003DAAD4 /* MXHomeViewController.h */,
+				98CC3BBA2180CA71003DAAD4 /* MXHomeViewController.m */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		98CC3BA42180C702003DAAD4 /* order */ = {
+			isa = PBXGroup;
+			children = (
+				98CC3BA92180C799003DAAD4 /* MXOrderlistViewController.h */,
+				98CC3BAA2180C799003DAAD4 /* MXOrderlistViewController.m */,
+				98CC3BAC2180C7AD003DAAD4 /* MXOrderDetailViewController.h */,
+				98CC3BAD2180C7AD003DAAD4 /* MXOrderDetailViewController.m */,
+				98CC3BAF2180C7C6003DAAD4 /* MXOrderAftersaleViewController.h */,
+				98CC3BB02180C7C6003DAAD4 /* MXOrderAftersaleViewController.m */,
+			);
+			path = order;
+			sourceTree = "<group>";
+		};
+		98CC3BB22180C906003DAAD4 /* pay */ = {
+			isa = PBXGroup;
+			children = (
+				98CC3BB32180C922003DAAD4 /* MXPayService.h */,
+				98CC3BB42180C922003DAAD4 /* MXPayService.m */,
+				98CC3BB62180C93E003DAAD4 /* MXPayViewController.h */,
+				98CC3BB72180C93E003DAAD4 /* MXPayViewController.m */,
+			);
+			path = pay;
 			sourceTree = "<group>";
 		};
 		D5377560342FF72959AD3669 /* Pods */ = {
@@ -322,15 +381,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MXRouter_Example/Pods-MXRouter_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MXRouter/MXRouter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXRouter.framework",
 			);
@@ -382,9 +437,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CC3BAB2180C799003DAAD4 /* MXOrderlistViewController.m in Sources */,
+				98CC3BB52180C922003DAAD4 /* MXPayService.m in Sources */,
 				6003F59E195388D20070C39A /* MXAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MXViewController.m in Sources */,
+				98CC3BA82180C726003DAAD4 /* MXWebViewController.m in Sources */,
+				98CC3BB12180C7C6003DAAD4 /* MXOrderAftersaleViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				98CC3BAE2180C7AD003DAAD4 /* MXOrderDetailViewController.m in Sources */,
+				98CC3BBB2180CA71003DAAD4 /* MXHomeViewController.m in Sources */,
+				98CC3BB82180C93E003DAAD4 /* MXPayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +574,7 @@
 			baseConfigurationReference = 8C1D23617017D684BDDF3D67 /* Pods-MXRouter_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MXRouter/MXRouter-Prefix.pch";
 				INFOPLIST_FILE = "MXRouter/MXRouter-Info.plist";
@@ -527,6 +590,7 @@
 			baseConfigurationReference = 7A2DC808F9D6BE69EA50CB9C /* Pods-MXRouter_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MXRouter/MXRouter-Prefix.pch";
 				INFOPLIST_FILE = "MXRouter/MXRouter-Info.plist";

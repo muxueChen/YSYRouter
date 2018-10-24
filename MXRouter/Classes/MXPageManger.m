@@ -128,7 +128,6 @@ static MXPageManger *manager = nil;
             }
         }
     }
-    
     UINavigationController *nav = nil;
     if ([self.rootViewController isKindOfClass:UITabBarController.class]) {
         nav = ((UITabBarController *)_rootViewController).selectedViewController;

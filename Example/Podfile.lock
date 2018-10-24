@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - MXRouter (0.1.0)
+  - MXRouter (0.1.2)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  MXRouter: a21149d9c696ec234ae964fd728666e3da0812c9
+  MXRouter: 4c244c53b99842231740ad7b636bf03ca763fe0a
 
 PODFILE CHECKSUM: 375235316160030cc93da5137fc32087d487c11a
 

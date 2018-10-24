@@ -22,8 +22,11 @@
     model.url = url;
     model.route = [model.url componentsSeparatedByString:@"?"].firstObject;
     model.anotherName = model.route;
+    if (!routerUrl.path || routerUrl.path.length <= 0) {
+        model.anotherName = nil;
+    }
     if ([[routerUrl scheme] isEqualToString:@"http"] || [[routerUrl scheme] isEqualToString:@"https"]) {
-        model.route = @"http://www.webview.com/webview";
+        model.route = @"router://www.webview.com/webview";
         model.routeType = URLRouteTypeWebView;
     }
     return model;
@@ -44,9 +47,9 @@
 //跳转方式类型
 + (JumpType)orderTypeWithString:(NSString *)string {
     JumpType type = JumpType_Push;
-    if ([string isEqualToString:@"open"]) {
+    if ([string isEqualToString:@"push"]) {
         type = JumpType_Push;
-    } else if ([string isEqualToString:@"goback"]) {
+    } else if ([string isEqualToString:@"pop"]) {
         type = JumpType_Pop;
     } else if ([string isEqualToString:@"home"]) {
         type = JumpType_PopToRoot;

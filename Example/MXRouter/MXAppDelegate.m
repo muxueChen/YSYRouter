@@ -7,12 +7,13 @@
 //
 
 #import "MXAppDelegate.h"
-
 @implementation MXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UIViewController *vc = [[MXRoute share] viewControllerWithRoute:@"router://www.muxue.com/home" parameter:nil callback:nil];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
