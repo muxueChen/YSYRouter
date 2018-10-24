@@ -20,7 +20,8 @@ it, simply add the following line to your Podfile:
 pod 'MXRouter'
 ```
 ## 路由类图
-![路由类图.jpg](http://note.youdao.com/yws/res/4174/WEBRESOURCE9cd6f4e14b8357669243ba6186f8e0ef)
+
+![类图说明.png](https://upload-images.jianshu.io/upload_images/4639197-987d2ddc6ea067c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Author
 
