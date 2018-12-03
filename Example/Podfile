@@ -5,7 +5,7 @@ target 'MXRouter_Example' do
 
   target 'MXRouter_Tests' do
     inherit! :search_paths
-
-    pod 'FBSnapshotTestCase'
+    
+    pod 'FBSnapshotTestCase', :git => 'https://github.com/delannoyk/ios-snapshot-test-case'
   end
 end

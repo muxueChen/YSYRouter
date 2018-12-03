@@ -31,6 +31,8 @@
 		6EC17B6986CC7F9EBDF0521AE86F371B /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */; };
 		73247510D7AD93E5FDBA474B353BF919 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		813132A2BE80A252C4E7E2A3E76402BB /* Pods-MXRouter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2423256A9B99FBD1B8AA84271FC0DEB0 /* Pods-MXRouter_Tests-dummy.m */; };
+		98DB5F5921B5299F00C9B318 /* MXRouterServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DB5F5721B5299F00C9B318 /* MXRouterServiceManager.h */; };
+		98DB5F5A21B5299F00C9B318 /* MXRouterServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DB5F5821B5299F00C9B318 /* MXRouterServiceManager.m */; };
 		9E45BEFE59B02FE7B91A464A4915D65C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1178F61F46E5B9C6CF3F2FF983C7E11 /* XCTest.framework */; };
 		A1F1D7EBF787E6DC948EB67AF18D7168 /* UIViewController+MXRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F15EA13DEF99232544B4644AB917F7E /* UIViewController+MXRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A26D08564FF6E6CBED11B37A8FF4E6D0 /* Pods-MXRouter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E58BF99236F1C2C12BC28C880983EB52 /* Pods-MXRouter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -115,6 +117,8 @@
 		85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		8D0B553B6145950ADEA2A95821436036 /* MXRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MXRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98DB5F5721B5299F00C9B318 /* MXRouterServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXRouterServiceManager.h; sourceTree = "<group>"; };
+		98DB5F5821B5299F00C9B318 /* MXRouterServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXRouterServiceManager.m; sourceTree = "<group>"; };
 		9C250B6F47AB1D57F456EA43F061B421 /* Pods-MXRouter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MXRouter_Example.modulemap"; sourceTree = "<group>"; };
 		9E964FEF8D8E81FC92EB492A0B90D750 /* MXURLModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MXURLModel.h; path = MXRouter/Classes/MXURLModel.h; sourceTree = "<group>"; };
 		9F86E98B1EDB3D204AF811245B1636A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -334,6 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				37CB29A1BF1C04699C6DFC96EF1C55B1 /* MXCommonProtocols.h */,
+				98DB5F5721B5299F00C9B318 /* MXRouterServiceManager.h */,
+				98DB5F5821B5299F00C9B318 /* MXRouterServiceManager.m */,
 				0795D331D8FD74F418E03F27B9FD3392 /* MXPageManger.h */,
 				E88A6E3383D6FC9DD0236AB29D6AAEDA /* MXPageManger.m */,
 				D5CDE394FE4382223B79DA63185617DE /* MXRoute.h */,
@@ -408,6 +414,7 @@
 				59FD5FAEFCF13CD39358A6F36C50BED8 /* FBSnapshotTestController.h in Headers */,
 				BCDA265400AF5BCF21074C5AF1FD09A8 /* UIApplication+StrictKeyWindow.h in Headers */,
 				63EA4B9CBBAB30A69C2D73693019FDC5 /* UIImage+Compare.h in Headers */,
+				98DB5F5921B5299F00C9B318 /* MXRouterServiceManager.h in Headers */,
 				73247510D7AD93E5FDBA474B353BF919 /* UIImage+Diff.h in Headers */,
 				387D066A1A34ED7DF0F716CB3A8B746D /* UIImage+Snapshot.h in Headers */,
 			);
@@ -594,6 +601,7 @@
 				4C022C88B9E8D527B1426B5281756EDE /* UIImage+Compare.m in Sources */,
 				E4877E179010E4E588B6E9E61B047B60 /* UIImage+Diff.m in Sources */,
 				EA2C5FBB576DBC67BE3E2F5897704BBF /* UIImage+Snapshot.m in Sources */,
+				98DB5F5A21B5299F00C9B318 /* MXRouterServiceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
