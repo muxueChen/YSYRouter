@@ -31,5 +31,14 @@
 - (id)viewControllerWithRoute:(NSString *)route
                     parameter:(NSDictionary *)parameter
                      callback:(MXCallBack)callback;
+
+/** 通过路找到组件，并执行服务
+ * route 路由地址
+ * parameter 参数
+ * callback 回调
+ */
+- (void)requestWithRoute:(NSString *)route
+               parameter:(NSDictionary *)parameter
+                callback:(MXCallBack)callback;
 @end
 

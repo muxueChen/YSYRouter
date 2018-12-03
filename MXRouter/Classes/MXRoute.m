@@ -72,6 +72,37 @@ static MXRoute *router = nil;
     //返回组件。。。
     return vc;
 }
+//
+- (void)requestWithRoute:(NSString *)route
+               parameter:(NSDictionary *)parameter
+                callback:(MXCallBack)callback {
+    id iclass = [self getClassWhitRoute:route];
+    //找不到页面就抛出404
+    NSAssert(iclass, @"路由404");
+    if (iclass == nil) {
+        //去到404页面...
+        return ;
+    }
+    UIViewController *vc = nil;
+    //
+    SEL initSel = NSSelectorFromString(@"viewControllerWithParameter:callBack:");
+    //便利构造器
+    if ([iclass respondsToSelector:initSel]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        //执行target对应的selector回调
+        vc = [iclass performSelector:initSel
+                          withObject:parameter
+                          withObject:callback];
+#pragma clang diagnostic pop
+    } else {
+        //配置参数。。。
+        vc = [[(Class)iclass alloc]init];
+        vc.parameter = parameter;
+        vc.callBack = callback;
+    }
+    //返回组件。。。
+}
 - (Class)getClassWhitRoute:(NSString *)route {
     //获取模块名。。。
     NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:route];

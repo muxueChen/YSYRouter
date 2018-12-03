@@ -57,4 +57,16 @@ typedef NSString * MXJSFunction;
          completionHandler:(MXCallBack)callback;
 @end
 
+/** 组件服务协议 */
+@protocol MXComponentProtocol <NSObject>
+@required
+/** 发出请求
+ * 接收请求目标组件 url 路由地址
+ * parameter 需要传递给目标页面对象的参数
+ * callBack 页面回调
+ */
+- (void)requestWithUrl:(NSString *)url
+             parameter:(NSDictionary *)parameter
+              callBack:(MXCallBack)callBack;
+@end
 
