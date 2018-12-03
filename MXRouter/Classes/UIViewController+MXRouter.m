@@ -11,9 +11,6 @@
 
 @implementation UIViewController (MXRouter)
 
-static const void * MXpagePropertyCallback = "MXpagePropertyCallback";
-static const void * MXpagePropertyParameter = "MXpagePropertyParameter";
-static const void * MXpagePropertyAnotherName = "MXpagePropertyAnotherName";
 #pragma mark #############--------------替换视图已经出现的方法
 + (void)load {
     Method viewDidAppear = class_getInstanceMethod(self, @selector(viewDidAppear:));
@@ -28,21 +25,21 @@ static const void * MXpagePropertyAnotherName = "MXpagePropertyAnotherName";
 }
 #pragma mark:#############--------------别名关联属性
 - (void (^)(id))callBack {
-    return objc_getAssociatedObject(self, MXpagePropertyCallback);
+    return objc_getAssociatedObject(self, _cmd);
 }
 - (void)setCallBack:(void (^)(id))callBack {
-    objc_setAssociatedObject(self, MXpagePropertyCallback, callBack, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, @selector(callBack), callBack, OBJC_ASSOCIATION_COPY);
 }
 - (NSDictionary *)parameter {
-    return objc_getAssociatedObject(self, MXpagePropertyParameter);
+    return objc_getAssociatedObject(self, _cmd);
 }
 - (void)setParameter:(NSDictionary *)parameter {
-    objc_setAssociatedObject(self, MXpagePropertyParameter, parameter, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(parameter), parameter, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (NSString *)anotherName {
-    return objc_getAssociatedObject(self, MXpagePropertyAnotherName);
+    return objc_getAssociatedObject(self, _cmd);
 }
 - (void)setAnotherName:(NSString *)anotherName {
-    objc_setAssociatedObject(self, MXpagePropertyAnotherName, anotherName, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, @selector(anotherName), anotherName, OBJC_ASSOCIATION_COPY);
 }
 @end
