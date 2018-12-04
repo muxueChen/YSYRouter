@@ -13,6 +13,7 @@
 #import "MXCommonProtocols.h"
 #import "MXPageManger.h"
 #import "MXRoute.h"
+#import "MXRouterServiceManager.h"
 #import "MXURLModel.h"
 #import "UIViewController+MXRouter.h"
 

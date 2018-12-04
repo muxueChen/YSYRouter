@@ -3,9 +3,10 @@ use_frameworks!
 target 'MXRouter_Example' do
   pod 'MXRouter', :path => '../'
 
-  target 'MXRouter_Tests' do
-    inherit! :search_paths
-    
-    pod 'FBSnapshotTestCase', :git => 'https://github.com/delannoyk/ios-snapshot-test-case'
-  end
+#  target 'MXRouter_Tests' do
+#    inherit! :search_paths
+#
+#    pod 'FBSnapshotTestCase', //:git => 'https://github.com/delannoyk/ios-snapshot-test-case'
+#  end
 end
+

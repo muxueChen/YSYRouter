@@ -1,27 +1,16 @@
 PODS:
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
-  - MXRouter (0.1.2)
+  - MXRouter (0.1.4)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
   - MXRouter (from `../`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
   MXRouter:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  MXRouter: 4c244c53b99842231740ad7b636bf03ca763fe0a
+  MXRouter: 2c5cd429f4d60e2e8544ba078dbef9694c0cbb1d
 
-PODFILE CHECKSUM: 375235316160030cc93da5137fc32087d487c11a
+PODFILE CHECKSUM: e9339fd0a7426f9d99dc9f8d7802529ea391b7b8
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2

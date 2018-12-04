@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "summary": "A short description of MXRouter.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://gitee.com/chenXueMing/XBRouter",
+  "homepage": "https://github.com/muxueChen/MXRouter.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "暮雪": "1391801900@qq.com"
   },
   "source": {
-    "git": "https://gitee.com/chenXueMing/XBRouter.git",
+    "git": "https://github.com/muxueChen/MXRouter.git",
     "tag": "0.1.4"
   },
   "platforms": {
