@@ -31,7 +31,6 @@
 		981D053B22408E1B0079E9AB /* YSYHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 981D053A22408E1B0079E9AB /* YSYHomeService.m */; };
 		98B82DE9223A898800915B80 /* BService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B82DE8223A898800915B80 /* BService.m */; };
 		98B82DEC223A899B00915B80 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B82DEB223A899B00915B80 /* BViewController.m */; };
-		E9947E3D22E9CDF100BF07C2 /* YSYGoodsService2.m in Sources */ = {isa = PBXBuildFile; fileRef = E9947E3C22E9CDF000BF07C2 /* YSYGoodsService2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +86,6 @@
 		98B82DEA223A899B00915B80 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
 		98B82DEB223A899B00915B80 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
 		B9CE8D351A0DFE1E1A3AA2E1 /* Pods_YSYRouter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSYRouter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9947E3B22E9CDF000BF07C2 /* YSYGoodsService2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSYGoodsService2.h; sourceTree = "<group>"; };
-		E9947E3C22E9CDF000BF07C2 /* YSYGoodsService2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSYGoodsService2.m; sourceTree = "<group>"; };
 		EBE2689E38A0DCBC16BAF8A1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,8 +219,6 @@
 			children = (
 				981D052D224088250079E9AB /* YSYGoodsService.h */,
 				981D052E224088250079E9AB /* YSYGoodsService.m */,
-				E9947E3B22E9CDF000BF07C2 /* YSYGoodsService2.h */,
-				E9947E3C22E9CDF000BF07C2 /* YSYGoodsService2.m */,
 				981D05302240883D0079E9AB /* YSYYHHViewController.h */,
 				981D05312240883D0079E9AB /* YSYYHHViewController.m */,
 			);
@@ -331,10 +326,6 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = muxueChen;
 				TargetAttributes = {
-					6003F589195388D20070C39A = {
-						DevelopmentTeam = 47W6PPYRW8;
-						ProvisioningStyle = Manual;
-					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -410,11 +401,15 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YSYRouter_Example/Pods-YSYRouter_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/YSYRouter/YSYRouter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YSYRouter.framework",
 			);
@@ -440,7 +435,6 @@
 				981D053B22408E1B0079E9AB /* YSYHomeService.m in Sources */,
 				981D05322240883D0079E9AB /* YSYYHHViewController.m in Sources */,
 				981D053522408D130079E9AB /* YSYTabAViewController.m in Sources */,
-				E9947E3D22E9CDF100BF07C2 /* YSYGoodsService2.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,15 +589,12 @@
 			baseConfigurationReference = 025E116CF987F3B2527A45B7 /* Pods-YSYRouter_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 47W6PPYRW8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YSYRouter/YSYRouter-Prefix.pch";
 				INFOPLIST_FILE = "YSYRouter/YSYRouter-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.basestonedata.xxyp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "小象最新版_Development";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -613,15 +604,12 @@
 			baseConfigurationReference = 96E9E74C019B73372FB52EE5 /* Pods-YSYRouter_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 47W6PPYRW8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YSYRouter/YSYRouter-Prefix.pch";
 				INFOPLIST_FILE = "YSYRouter/YSYRouter-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.basestonedata.xxyp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "小象最新版_Development";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

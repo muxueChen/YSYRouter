@@ -125,15 +125,7 @@ UIViewController *YSYGetTopViewController() {
         [self share];
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         if (routerTable[url] == nil) {
-            NSMutableArray*objcClassAray = @[].mutableCopy;
-            [objcClassAray addObject:objcClass];
-            [routerTable setValue:(id)objcClassAray forKey:url];
-        }else{
-            NSMutableArray*objcClassAray = [NSMutableArray arrayWithArray:(NSArray*)routerTable[url]];
-            if (![objcClassAray containsObject:objcClass]) {
-                [objcClassAray addObject:objcClass];
-                [routerTable setValue:(id)objcClassAray forKey:url];
-            }
+            [routerTable setValue:objcClass forKey:url];
         }
         dispatch_semaphore_signal(semaphore);
         return YES;
@@ -149,17 +141,7 @@ UIViewController *YSYGetTopViewController() {
 + (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url {
     return [self callUrl:url callBack:nil];
 }
-+ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url callBack:(YSYCallBack)callBack {
-    return [self callUrl:url parameter:nil callBack:callBack];
-}
 
-+ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url parameter:(NSDictionary *)parameter {
-
-    return [self callUrl:url parameter:parameter callBack:nil];
-}
-+ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url parameter:(NSDictionary *)parameter callBack:(YSYCallBack)callBack {
- return [self openUrlString:url jumpType:YSYRouterServiceJumpTypePush parameter:parameter isJump:NO callBack:callBack];
-}
 + (id<YSYComponentInterfaceProtocol>)openUrl:(NSURL *)url {
     return [self openUrl:url parameter:nil callBack:nil];
 }
@@ -173,98 +155,39 @@ UIViewController *YSYGetTopViewController() {
 }
 
 + (id<YSYComponentInterfaceProtocol>)openUrl:(NSURL *)url parameter:(NSDictionary *)parameter callBack:(YSYCallBack)callBack {
-   return [self openUrlString:url.absoluteString jumpType:(YSYRouterServiceJumpTypePush) parameter:parameter callBack:callBack];
+    return [self openUrl:url jumpType:YSYRouterServiceJumpTypePush parameter:parameter callBack:callBack];
 }
 
 + (id<YSYComponentInterfaceProtocol>)openUrlString:(NSString *)urlString jumpType:(YSYRouterServiceJumpType)jumptype {
     return [self openUrlString:urlString jumpType:jumptype parameter:nil callBack:nil];
 }
+
 + (id<YSYComponentInterfaceProtocol>)openUrlString:(NSString *)urlString
                                           jumpType:(YSYRouterServiceJumpType)jumptype
                                          parameter:(NSDictionary *)parameter
-                                          callBack:(YSYCallBack)callBack{
-    return [self openUrlString:urlString jumpType:jumptype parameter:parameter isJump:YES callBack:callBack];
-}
-+ (id<YSYComponentInterfaceProtocol>)openUrlString:(NSString *)urlString
-                                          jumpType:(YSYRouterServiceJumpType)jumptype
-                                         parameter:(NSDictionary *)parameter
-                                            isJump:(BOOL)isJump
                                           callBack:(YSYCallBack)callBack {
-    
-    if (!urlString) {
-        return nil;
-    }
-    
-    /**bsdlks 特殊处理*/
-    [self openWebUrl:&urlString parameter:&parameter];
-    
-    NSArray* moduleArray = [self findCache:urlString];
-    id<YSYComponentInterfaceProtocol>module;
-    
-    for (id<YSYComponentInterfaceProtocol> cacheModule in moduleArray) {
-        
-        module = [self openUrl: [NSURL URLWithString:urlString] module:cacheModule jumpType:YSYRouterServiceJumpTypePush parameter:parameter isJump:isJump callBack:callBack];
-        if (module) break;
-    }
-    if (module) return module;
-    
-    moduleArray = [self findUrl:urlString];
-    for (Class class in moduleArray) {
-        
-        module = [[class alloc] init];
-        
-        module = [self openUrl: [NSURL URLWithString:urlString] module:module jumpType:YSYRouterServiceJumpTypePush parameter:parameter isJump:isJump callBack:callBack];
-        
-        if (module) {
-            [self cacheModule:module withUrl:urlString];
-            break;
-        }
-    }
-    if (!module) {
-        NSLog(@"没有找到路由：%@",urlString);
-//        NSString*operUrls = @"bsd://xxyp/BSDUrlRouter/openUrl";
-//        if (![urlString isEqualToString:operUrls]) {
-//            NSMutableDictionary* muParameter = [NSMutableDictionary dictionaryWithDictionary:parameter];
-//            [muParameter setValue:urlString forKey:@"openUrl"];
-//            return [self openUrl:[NSURL URLWithString:operUrls] parameter:muParameter callBack:callBack];
-//        }
-    }
-    return module;
+    return [self openUrl:[NSURL URLWithString:urlString] jumpType:jumptype parameter:parameter callBack:callBack];
 }
+
 + (id<YSYComponentInterfaceProtocol>)openUrl:(NSURL *)url
-                                            module:(id<YSYComponentInterfaceProtocol>)service
                                           jumpType:(YSYRouterServiceJumpType)jumptype
                                          parameter:(NSDictionary *)parameter
-                                            isJump:(BOOL)isJump
                                           callBack:(YSYCallBack)callBack {
-    if (!url||!service) {
+    if (!url) {
         return nil;
     }
     /**处理url*/
     NSDictionary *routerParameter = [self analysisUrl:url];
     NSMutableDictionary *dic = routerParameter[YSYRouterParameterUserInfo];
     [dic addEntriesFromDictionary:parameter];
-    
-    if ([service respondsToSelector:@selector(setRouterParameter:)]) {
-        service.routerParameter = parameter;
-    }
-    if ([service respondsToSelector:@selector(setRouterCallBack:)]) {
-        service.routerCallBack = callBack;
-    }
-    
-    if (!isJump) return service;
-    
-    NSString*routerParameterAction = routerParameter[YSYRouterParameterAction];
-    BOOL hasParameter = YES;
-    SEL action = NSSelectorFromString(routerParameterAction);
-    if (!action || ![service respondsToSelector:action]) {
-        hasParameter = NO;
-        action = NSSelectorFromString([routerParameterAction substringToIndex:routerParameterAction.length-1]);
-    }
+    id<YSYComponentInterfaceProtocol>service = [self callUrl:routerParameter[YSYRouterParameterModuleName]
+                                                   parameter:dic
+                                                    callBack:callBack];
+    SEL action = NSSelectorFromString(routerParameter[YSYRouterParameterAction]);
     // 如果目标模块就是一个 UIViewController 对象
     if ([service isKindOfClass:UIViewController.class] ) {
         if (action && [service respondsToSelector:action]) {
-            [self safePerformAction:action module:service parameter:dic hasParameter:hasParameter];
+            [self safePerformAction:action module:service parameter:dic];
         }
         if (jumptype == YSYRouterServiceJumpTypePush) {
             [YSYGetTopViewController().navigationController pushViewController:(UIViewController *)service animated:YES];
@@ -274,7 +197,7 @@ UIViewController *YSYGetTopViewController() {
         return service;
         // 目标组件不是 UIViewController 对象
     } else if (action && [service respondsToSelector:action]) {
-        id obj =  [self safePerformAction:action module:service parameter:routerParameter[YSYRouterParameterUserInfo] hasParameter:hasParameter];
+        id obj =  [self safePerformAction:action module:service parameter:routerParameter[YSYRouterParameterUserInfo]];
         if ([obj isKindOfClass:UIViewController.class] ) {
             // 一个 导航控制器再 push 进入一个 导航控制器会 系统崩溃
             if (jumptype == YSYRouterServiceJumpTypePush && ![obj isKindOfClass:UINavigationController.class]) {
@@ -285,65 +208,69 @@ UIViewController *YSYGetTopViewController() {
         }
         return service;
     }
+    if (!service) {
+        NSLog(@"没有找到路由：%@",url.absoluteString);
+    }
     return nil;
 }
 
-+(void)openWebUrl:(NSString**)url parameter:(NSDictionary **)parameter{
-    NSString*scheme = [NSURL URLWithString:*url].scheme;
-    if ([scheme isEqualToString:@"http"] ||
-        [scheme isEqualToString:@"https"] ||
-        [scheme isEqualToString:@"bsdlk"] ||
-        [scheme isEqualToString:@"bsdlks"]) {
-        NSMutableDictionary* muParameter = [NSMutableDictionary dictionaryWithDictionary:*parameter];
-        [muParameter setValue:*url forKey:@"webURL"];
-        *parameter = muParameter.copy;
-        *url = [NSString stringWithFormat:@"bsd://xxyp/webService/openWebView"];
-    }
++ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url callBack:(YSYCallBack)callBack {
+    return [self callUrl:url parameter:nil callBack:callBack];
 }
-+(BOOL)cacheModule:(id<YSYComponentInterfaceProtocol>)module withUrl:(NSString*)url{
-    // 缓存组件,UIViewController 类不缓存
-    if (module && ![module isKindOfClass:UIViewController.class]) {
-        if (cacheTable[url] == nil) {
-            NSMutableArray*objcClassAray = @[].mutableCopy;
-            [objcClassAray addObject:module];
-            [cacheTable setValue:(id)objcClassAray forKey:url];
-            return YES;
-        }else{
-            NSMutableArray*objcClassAray = [NSMutableArray arrayWithArray:(NSArray*)cacheTable[url]];
-            if (![objcClassAray containsObject:module]) {
-                [objcClassAray addObject:module];
-                [cacheTable setValue:(id)objcClassAray forKey:url];
-                return YES;
-            }
+
++ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url parameter:(NSDictionary *)parameter {
+    return [self callUrl:url parameter:parameter callBack:nil];
+}
+
++ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url parameter:(NSDictionary *)parameter callBack:(YSYCallBack)callBack {
+    //获取组件
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    id<YSYComponentInterfaceProtocol>module = [self findCache:url];
+    if (!module) {
+        Class class = [self findUrl:url];
+        module = [[class alloc] init];
+        
+        // 缓存组件,UIViewController 类不缓存
+        if (module && ![module isKindOfClass:UIViewController.class]) {
+            cacheTable[url] = module;
         }
     }
-    return NO;
+    if ([module respondsToSelector:@selector(setRouterParameter:)]) {
+        module.routerParameter = parameter;
+    }
+    if ([module respondsToSelector:@selector(setRouterCallBack:)]) {
+        module.routerCallBack = callBack;
+    }
+    dispatch_semaphore_signal(semaphore);
+    return module;
 }
-+ (NSMutableArray*)findCache:(NSString *)url{
-    NSMutableArray*objcClassArray = [NSMutableArray arrayWithArray:(NSArray*)cacheTable[url]];
+
++ (id<YSYComponentInterfaceProtocol>)findCache:(NSString *)url {
+    id<YSYComponentInterfaceProtocol>module = cacheTable[url];
     // 如果没有找到对应的路由，则采用模糊匹配
-    if (objcClassArray.count == 0) {
+    if (!module) {
         for (NSString *key in cacheTable.allKeys) {
             if ([url hasPrefix:key]) {
-                objcClassArray = (NSMutableArray*)cacheTable[url];
+                module = cacheTable[url];
                 break;
             }
         }
     }
-    return objcClassArray;
+    return module;
 }
-+ (NSMutableArray*)findUrl:(NSString *)url{
-    NSMutableArray*objcClassArray = [NSMutableArray arrayWithArray:(NSArray*)routerTable[url]];
+
++ (Class)findUrl:(NSString *)url {
+    Class class = routerTable[url];
     // 如果没有找到对应的路由，则采用模糊匹配
-    if (objcClassArray.count == 0) {
+    if (!class) {
         for (NSString *key in routerTable.allKeys) {
             if ([url hasPrefix:key]) {
-                objcClassArray = (NSMutableArray*)routerTable[key];
+                class = routerTable[url];
                 break;
             }
         }
     }
-    return objcClassArray;
+    return class;
 }
 
 #pragma mark -- 工具
@@ -371,7 +298,7 @@ UIViewController *YSYGetTopViewController() {
     // 取出响应事件方法
     if (comm.count > 0) {
         NSString *actionString = [comm componentsJoinedByString:@"_"];
-        urlRouterDic[YSYRouterParameterAction] = [actionString stringByAppendingString: params?@":":@""];
+        urlRouterDic[YSYRouterParameterAction] = [actionString stringByAppendingString:@":"];
     }
    
     // 取出url 后面拼接的参数
@@ -379,7 +306,7 @@ UIViewController *YSYGetTopViewController() {
     return urlRouterDic;
 }
 
-+ (id)safePerformAction:(SEL)action module:(NSObject *)module parameter:(NSDictionary *)parameter hasParameter:(BOOL)hasParameter {
++ (id)safePerformAction:(SEL)action module:(NSObject *)module parameter:(NSDictionary *)parameter {
     NSMethodSignature* methodSig = [module methodSignatureForSelector:action];
     if(methodSig == nil) {
         return nil;
@@ -388,9 +315,7 @@ UIViewController *YSYGetTopViewController() {
     
     if (strcmp(retType, @encode(void)) == 0) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
-        if (hasParameter) {
-           [invocation setArgument:&parameter atIndex:2];
-        }
+        [invocation setArgument:&parameter atIndex:2];
         [invocation setSelector:action];
         [invocation setTarget:module];
         [invocation invoke];
@@ -399,9 +324,7 @@ UIViewController *YSYGetTopViewController() {
     
     if (strcmp(retType, @encode(NSInteger)) == 0) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
-        if (hasParameter) {
-            [invocation setArgument:&parameter atIndex:2];
-        }
+        [invocation setArgument:&parameter atIndex:2];
         [invocation setSelector:action];
         [invocation setTarget:module];
         [invocation invoke];
@@ -412,9 +335,7 @@ UIViewController *YSYGetTopViewController() {
     
     if (strcmp(retType, @encode(BOOL)) == 0) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
-        if (hasParameter) {
-            [invocation setArgument:&parameter atIndex:2];
-        }
+        [invocation setArgument:&parameter atIndex:2];
         [invocation setSelector:action];
         [invocation setTarget:module];
         [invocation invoke];
@@ -425,9 +346,7 @@ UIViewController *YSYGetTopViewController() {
     
     if (strcmp(retType, @encode(CGFloat)) == 0) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
-        if (hasParameter) {
-            [invocation setArgument:&parameter atIndex:2];
-        }
+        [invocation setArgument:&parameter atIndex:2];
         [invocation setSelector:action];
         [invocation setTarget:module];
         [invocation invoke];
@@ -438,9 +357,7 @@ UIViewController *YSYGetTopViewController() {
     
     if (strcmp(retType, @encode(NSUInteger)) == 0) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
-        if (hasParameter) {
-            [invocation setArgument:&parameter atIndex:2];
-        }
+        [invocation setArgument:&parameter atIndex:2];
         [invocation setSelector:action];
         [invocation setTarget:module];
         [invocation invoke];

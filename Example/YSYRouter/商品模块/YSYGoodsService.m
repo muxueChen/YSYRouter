@@ -21,20 +21,7 @@
     [YSYRouterServiceManager registerModuleWithUrl:@"bsd://xxyp/goods" moduleClass:self];
 }
 
-//- (UIViewController *)yhh:(NSDictionary *)parameter {
-//    return [[YSYYHHViewController alloc] init];
-//}
-- (void)yhh:(id)s{
-    NSLog(@"%@" ,s);
+- (UIViewController *)yhh:(NSDictionary *)parameter {
+    return [[YSYYHHViewController alloc] init];
 }
-- (void)yhh{
-    NSLog(@"adasdasdas");
-}
-//- (UIViewController *)yhh{
-//    return [[YSYYHHViewController alloc] init];
-//}
-//- (UIViewController *)yhh:(id)s{
-//    NSLog(@"%@" ,s);
-//    return [[YSYYHHViewController alloc] init];
-//}
 @end

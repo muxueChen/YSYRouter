@@ -34,12 +34,12 @@
     
     // 目前还没有处理这个组件
     YSYRouterModel *router1 = [YSYRouterModel new];
-    router1.router = @"bsdlk://www.xiaoxiang.com?i=1&j=3";
+    router1.router = @"bsdlk://www.xiaoxiang.com";
     router1.descried = @"bsdlk协议,app捕获到后替换为http协议，跳转新页面加载webview，0不需要拼接 1需要拼接";
     
     // 目前还没有这个处理组件
     YSYRouterModel *router2 = [YSYRouterModel new];
-    router2.router = @"bsdlks://www.xiaoxiang.com?i=1&j=3";
+    router2.router = @"bsdlks://www.xiaoxiang.com";
     router2.descried = @"bsdlks协议,app捕获到后替换为https协议，跳转新页面加载webview，0不需要拼接 1需要拼接";
     group1.array = @[router1, router2];
     
@@ -53,12 +53,9 @@
     router3.descried = @"商品详情";
     
     YSYRouterModel *router4 = [YSYRouterModel new];
-    router4.router = @"bsd://xxyp/goods/yhh?i=2";
+    router4.router = @"bsd://xxyp/goods/yhh";
     router4.descried = @"有好货";
-    YSYRouterModel *router44 = [YSYRouterModel new];
-    router44.router = @"bsd://xxyp/goods/yhh2";
-    router44.descried = @"有好货2";
-    group2.array = @[router3, router4,router44];
+    group2.array = @[router3, router4];
     
     // 基础实例
     YSYRouterGroupModel *group3 = [YSYRouterGroupModel new];

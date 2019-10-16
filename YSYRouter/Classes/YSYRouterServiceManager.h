@@ -84,7 +84,7 @@ UIViewController *YSYGetTopViewController(void);
  * parameter 需要传递给目标页面对象的参数
  * callBack 页面回调
  */
-//+ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url parameter:(NSDictionary *)parameter callBack:(YSYCallBack)callBack;
++ (id<YSYComponentInterfaceProtocol>)callUrl:(NSString *)url parameter:(NSDictionary *)parameter callBack:(YSYCallBack)callBack;
 @end
 
 /** UIViewController 路由扩展类 */

@@ -1,5 +1,5 @@
 PODS:
-  - YSYRouter (1.9.4)
+  - YSYRouter (1.6)
 
 DEPENDENCIES:
   - YSYRouter (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YSYRouter: dda83943661e08d331b4f445ce89233ac6aa7c14
+  YSYRouter: 8631386ff63d58310d8cffc97c69f6f1a2d2410f
 
 PODFILE CHECKSUM: d3df31fb6e9bb742d7d3c429153688aec2ddd167
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.6.1
