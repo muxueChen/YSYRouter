@@ -1,16 +1,16 @@
 PODS:
-  - MXRouter (0.1.4)
+  - YSYRouter (1.9.4)
 
 DEPENDENCIES:
-  - MXRouter (from `../`)
+  - YSYRouter (from `../`)
 
 EXTERNAL SOURCES:
-  MXRouter:
+  YSYRouter:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MXRouter: 2c5cd429f4d60e2e8544ba078dbef9694c0cbb1d
+  YSYRouter: dda83943661e08d331b4f445ce89233ac6aa7c14
 
-PODFILE CHECKSUM: e9339fd0a7426f9d99dc9f8d7802529ea391b7b8
+PODFILE CHECKSUM: d3df31fb6e9bb742d7d3c429153688aec2ddd167
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.7.5

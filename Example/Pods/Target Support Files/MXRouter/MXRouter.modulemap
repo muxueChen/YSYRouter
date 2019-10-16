@@ -1,6 +1,0 @@
-framework module MXRouter {
-  umbrella header "MXRouter-umbrella.h"
-
-  export *
-  module * { export * }
-}

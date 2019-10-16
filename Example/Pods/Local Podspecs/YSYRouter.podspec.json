@@ -1,0 +1,22 @@
+{
+  "name": "YSYRouter",
+  "version": "1.9.4",
+  "summary": "组件化路由通信组件",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "git@114.55.74.197:chenxueming/YSYRouter.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "muxueChen": "1391801900@qq.com"
+  },
+  "source": {
+    "git": "git@114.55.74.197:chenxueming/YSYRouter.git",
+    "tag": "1.9.4"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "YSYRouter/Classes/**/*"
+}
